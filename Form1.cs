@@ -26,12 +26,24 @@ namespace SebastianEngelstajn_WindowsFinal
         {
             Sueldo = Convert.ToDecimal(txtSueldo.Text);
             Puesto = txtPuesto.Text;
+            Nombre = txtNombre.Text;
+            Apellido = txtApellido.Text;
+
             if(Sueldo <= 0)
             {
                 MessageBox.Show("El sueldo debe ser mayor a 0");
             } else if(Puesto != "Soporte Tecnico" && Puesto != "DBA" && Puesto != "Desarrollador")
             {
                  MessageBox.Show("No es un puesto Valido");
+            }
+
+            if(Nombre.Length <= 1 || Nombre.Length > 50)
+            {
+                MessageBox.Show("Nombre no tiene una longitud correcta");
+            }
+            if(Apellido.Length <= 1 || Apellido.Length > 50)
+            {
+                MessageBox.Show("Apellido no tiene una Longitud Correcta");
             }
         }
 
@@ -46,14 +58,36 @@ namespace SebastianEngelstajn_WindowsFinal
         {
             int[] horasTrabajadas;
             int horasTotales = 0;
+            decimal horasPromedio = 0;
             horasTrabajadas = new int[5];
             for(int i = 0; i < horasTrabajadas.Length; i++)
             {
                 int hora = Convert.ToInt32(Interaction.InputBox("ingrese horas trabajadas por dia"));
                 horasTrabajadas[i] = hora;
                 horasTotales = horasTotales + hora;
+                horasPromedio = (horasTotales + hora);
             }
+            MessageBox.Show("la cantidad promedio trabajada fue: " + (horasPromedio/5));
 
+             int CantMaximas = 0;
+            for(int i = 0; i < horasTrabajadas.Length; i++)
+            {
+                if(horasTrabajadas[i] > CantMaximas)
+                {
+                    CantMaximas = horasTrabajadas[i];
+                }
+            }
+            MessageBox.Show("La mayor cantidad de horas trabajadas fue: " + CantMaximas);
+
+            int CantMinimas = 8;
+            for(int i = 0; i < horasTrabajadas.Length; i++)
+            {
+                if (horasTrabajadas[i] < CantMinimas)
+                {
+                    CantMinimas = horasTrabajadas[i];
+                }
+            }
+            MessageBox.Show("La menor cantidad de horas trabajadas fue: " + CantMinimas);
             MessageBox.Show("El total de horas trabajadas en la semana fue: "+" "+horasTotales.ToString()+" horas");
 
             if(horasTotales < 20)
