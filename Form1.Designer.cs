@@ -38,6 +38,7 @@
             this.txtPuesto = new System.Windows.Forms.TextBox();
             this.bttnValidaciones = new System.Windows.Forms.Button();
             this.bttnMostrar = new System.Windows.Forms.Button();
+            this.bttnIngresarHoras = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -124,11 +125,22 @@
             this.bttnMostrar.UseVisualStyleBackColor = true;
             this.bttnMostrar.Click += new System.EventHandler(this.bttnMostrar_Click);
             // 
+            // bttnIngresarHoras
+            // 
+            this.bttnIngresarHoras.Location = new System.Drawing.Point(459, 188);
+            this.bttnIngresarHoras.Name = "bttnIngresarHoras";
+            this.bttnIngresarHoras.Size = new System.Drawing.Size(124, 24);
+            this.bttnIngresarHoras.TabIndex = 10;
+            this.bttnIngresarHoras.Text = "Ingresar Horas";
+            this.bttnIngresarHoras.UseVisualStyleBackColor = true;
+            this.bttnIngresarHoras.Click += new System.EventHandler(this.bttnIngresarHoras_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bttnIngresarHoras);
             this.Controls.Add(this.bttnMostrar);
             this.Controls.Add(this.bttnValidaciones);
             this.Controls.Add(this.txtPuesto);
@@ -158,6 +170,7 @@
         private System.Windows.Forms.TextBox txtPuesto;
         private System.Windows.Forms.Button bttnValidaciones;
         private System.Windows.Forms.Button bttnMostrar;
+        private System.Windows.Forms.Button bttnIngresarHoras;
     }
 }
 

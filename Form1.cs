@@ -42,7 +42,32 @@ namespace SebastianEngelstajn_WindowsFinal
             MessageBox.Show(Nombre.ToUpper() +" ,"+ Puesto.ToUpper());
         }
 
+        private void bttnIngresarHoras_Click(object sender, EventArgs e)
+        {
+            int[] horasTrabajadas;
+            int horasTotales = 0;
+            horasTrabajadas = new int[5];
+            for(int i = 0; i < horasTrabajadas.Length; i++)
+            {
+                int hora = Convert.ToInt32(Interaction.InputBox("ingrese horas trabajadas por dia"));
+                horasTrabajadas[i] = hora;
+                horasTotales = horasTotales + hora;
+            }
 
+            MessageBox.Show("El total de horas trabajadas en la semana fue: "+" "+horasTotales.ToString()+" horas");
 
+            if(horasTotales < 20)
+            {
+                MessageBox.Show("No tiene dias libre en la semana que viene");
+            } else if(horasTotales >= 20 && horasTotales < 30)
+            {
+                MessageBox.Show("Tiene un dia libre en la proxima semana");
+
+            } else if( horasTotales > 30)
+            {
+                MessageBox.Show("Tiene dos dias libres la proxima semana");
+            }
+
+        }
     }
 }
